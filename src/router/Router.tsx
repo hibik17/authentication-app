@@ -9,22 +9,22 @@ export const Router: VFC = memo(() => {
       <Route path="/">
         <Login />
       </Route>
-      <Route
+      {/* routeの配列の展開 */}
+      <Route 
         path="/home"
-        render={({ match: { url } }) => {
+        render={({match: {url} }) => (
           <Switch>
-            {homeRoutes.map((route) => (
-              <Route
-                key={route.path}
-                exact={route.exact}
-                path={`${url}${route.path}`}
+            {homeRoutes.map((route) => {
+              <Route 
+               key={route.path}
+               exact={route.exact}
+               path={`${url}${route.path}`}
               >
                 {route.children}
               </Route>
-            ))
+            })}
           </Switch>
-        }}
-      ></Route>
+        )}
     </Switch>
   );
 });
