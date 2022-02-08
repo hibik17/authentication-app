@@ -12,7 +12,7 @@ export const useMessage = () => {
     (props: Props) => {
       const { title, status } = props;
       toast({
-        // 同じ名称のものはわざわざ値を割り振らなくても値を渡すことができる。
+        // 同じ名称のものはわざわざ値を割り振らなくても値を渡すことができる。propsに関して
         title,
         status,
         position: "top",
