@@ -5,10 +5,11 @@ type Props = {
   imageURL: string;
   userName: string;
   fullName: string;
+  onClickUser: () => void;
 };
 
 export const UserCard: VFC<Props> = memo((props) => {
-  const { imageURL, userName, fullName } = props;
+  const { imageURL, userName, fullName, onClickUser } = props;
   return (
     <Box w="260px" bg="white" borderRadius="10px" shadow="md" p={4}>
       <Stack textAlign="center">
@@ -19,6 +20,8 @@ export const UserCard: VFC<Props> = memo((props) => {
           src={imageURL}
           m="auto"
           _hover={{ cursor: "pointer", opacity: 0.8 }}
+          // modalの起動を行うクリック時の処理の記載
+          onClick={onClickUser}
         />
         <Text fontSize="lg" fontWeight="bold">
           {userName}
