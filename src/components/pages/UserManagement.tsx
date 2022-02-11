@@ -20,7 +20,9 @@ export const UserManagement: VFC = memo(() => {
   // ユーザーの取得などを行うcustom hooksの展開
   const { getUsers, users, loading } = useAllUsers();
 
-  const onClickUser = useCallback(() => onOpen(), []);
+  const onClickUser = useCallback((id: number) => {
+    console.log(id);
+  }, []);
 
   useEffect(() => {
     getUsers();
@@ -37,6 +39,7 @@ export const UserManagement: VFC = memo(() => {
           {users.map((user) => (
             <WrapItem key={user.id} mx="auto">
               <UserCard
+                id={user.id}
                 imageURL="https:source.unsplash.com/random"
                 userName={user.username}
                 fullName={user.name}

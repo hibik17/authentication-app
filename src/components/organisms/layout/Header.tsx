@@ -40,7 +40,7 @@ export const Header = () => {
         <Flex align="center" as="a" mr={8} _hover={{ cursor: "pointer" }}>
           <Heading
             as="a"
-            font-size={{ base: "md", md: "lg" }}
+            fontSize={{ base: "md", md: "lg" }}
             onClick={onClickHome}
           >
             ユーザー管理アプリ
@@ -48,7 +48,7 @@ export const Header = () => {
         </Flex>
         <Flex
           align="center"
-          font-size="sm"
+          fontSize="sm"
           flexGrow={2}
           display={{ base: "none", md: "flex" }}
         >
